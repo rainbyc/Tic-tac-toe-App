@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="turn-indicator">X's turn</div>
+        <div class="board"></div>
+        <button class="resetbtn" onclick="resetGame()">Reset</button>
+        <div class="move-history">
+            <button class="move-btn" onclick="previousMove()" disabled>Previous</button>
+            <button class="move-btn" onclick="nextMove()" disabled>Next</button>
+        </div>
+        </div>
+        <script src="script.js"></script>
 </body>
 </html>
