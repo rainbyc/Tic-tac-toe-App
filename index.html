@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tic-tac-toe</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="container">
-        <div class="turn-indicator">X's turn</div>
-        <div class="board"></div>
-        <button class="resetbtn" onclick="resetGame()">Reset</button>
-        <div class="move-history">
-            <button class="move-btn" onclick="previousMove()" disabled>Previous</button>
-            <button class="move-btn" onclick="nextMove()" disabled>Next</button>
-        </div>
-        </div>
-        <script src="script.js"></script>
-</body>
+      <div class="turn-indicator">X's turn</div>
+      <div class="board"></div>
+      <button class="resetbtn" onclick="resetGame()">Reset</button>
+      <div class="move-history">
+        <button class="move-btn" onclick="previousMove()" disabled>
+          Previous
+        </button>
+        <button class="move-btn" onclick="nextMove()" disabled>Next</button>
+      </div>
+    </div>
+    <!-- This is the popup part that shows when the page load -->
+    <div class="popup">
+      <h1>Welcome to the Group 3 Tic Tac Toe App.</h1>
+      <button id="close" class="resetbtn">Play now</button>
+    </div>
+    <!-- script -->
+    <script src="script.js"></script>
+  </body>
 </html>
