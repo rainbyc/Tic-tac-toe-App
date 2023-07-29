@@ -134,6 +134,11 @@ function previousMove() {
         updateMoveButtons();
         currentMoveIndex--;
     }   
+    if (moveHistoryButtons[0].disabled) {
+        previousButton.style.display = 'none';
+    }else{
+        previousButton.style.display = 'block';
+    } 
 }
 
 function nextMove() {
@@ -150,6 +155,7 @@ function nextMove() {
 function updateMoveButtons() {
     moveHistoryButtons[0].disabled = currentMoveIndex <= 0;
     moveHistoryButtons[1].disabled = currentMoveIndex >= moveHistory.length - 1;
+    
 }
 function resetGame() {
     board = [
