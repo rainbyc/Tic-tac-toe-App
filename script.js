@@ -126,14 +126,14 @@ function makeMove(row, col) {
 }
 
 function previousMove() {
-    if (currentMoveIndex > 0) {
-        currentMoveIndex--;
+    if (currentMoveIndex >= 0) {
         const { player, row, col } = moveHistory[currentMoveIndex];
         board[row][col] = '';
         currentPlayer = player === 'X' ? 'O' : 'X';
         renderBoard();
         updateMoveButtons();
-    }
+        currentMoveIndex--;
+    }   
 }
 
 function nextMove() {
