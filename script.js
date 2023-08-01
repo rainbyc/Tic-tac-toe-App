@@ -141,16 +141,24 @@ function makeMove(row, col) {
   }
 }
 
+
 function previousMove() {
-  if (currentMoveIndex > 0) {
-    currentMoveIndex--;
-    const { player, row, col } = moveHistory[currentMoveIndex];
-    board[row][col] = "";
-    currentPlayer = player === "X" ? "O" : "X";
-    renderBoard();
-    updateMoveButtons();
-  }
+  if (currentMoveIndex >= 0) {
+      const { player, row, col } = moveHistory[currentMoveIndex];
+      board[row][col] = '';
+      currentPlayer = player === 'X' ? 'O' : 'X';
+      renderBoard();
+      updateMoveButtons();
+      currentMoveIndex--;
+  }   
+  if (moveHistoryButtons[0].disabled) {
+      previousButton.style.display = 'none';
+  } else {
+      previousButton.style.display = 'block';
+  } 
+  nextButton.disabled = currentMoveIndex >= moveHistory.length - 1;
 }
+
 
 function nextMove() {
   if (currentMoveIndex < moveHistory.length - 1) {
@@ -167,6 +175,8 @@ function updateMoveButtons() {
   moveHistoryButtons[0].disabled = currentMoveIndex <= 0;
   moveHistoryButtons[1].disabled = currentMoveIndex >= moveHistory.length - 1;
 }
+
+
 function resetGame() {
   board = [
     ["", "", ""],
